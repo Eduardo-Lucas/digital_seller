@@ -1,0 +1,1 @@
+web: gunicorn digital_seller.wsgi --log-file -
