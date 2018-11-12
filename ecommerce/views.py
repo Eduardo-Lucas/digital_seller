@@ -8,7 +8,7 @@ from ecommerce.serializers import MarcaSerializer, ProdutoSerializer
 
 class MarcaViewSet(viewsets.ReadOnlyModelViewSet):
     """
-    Endpoint da API que permite que as Marcas sejam visualizadas.
+    Permitir consultar dados cadastrais de marcas.
     """
     permission_classes = (permissions.IsAuthenticated, )
     queryset = Marca.objects.all().order_by('nm_marca')
@@ -18,9 +18,24 @@ class MarcaViewSet(viewsets.ReadOnlyModelViewSet):
 
 class ProdutoViewSet(viewsets.ReadOnlyModelViewSet):
     """
-    Endpoint da API que permite que as Produtos sejam visualizados.
+    Permitir consultar dados cadastrais de produtos. Variações de produtos devem ser retornadas em
+    objeto ou vetor dentro de posições. Retorno deve ser ordenado pelo código do produto em ordem
+    ascendente.
     """
     permission_classes = (permissions.IsAuthenticated, )
-    queryset = Produto.objects.all().order_by('nm_produto')
+    queryset = Produto.objects.all().order_by('cd_produto')
     serializer_class = ProdutoSerializer
     filter_fields = ('cd_produto',)
+
+
+# Consultar fila de produtos cadastrados (/api/produtos/consultar/fila/inseridos)
+class ProdutoInseridoViewSet(viewsets.ReadOnlyModelViewSet):
+    """
+    Permitir consultar produtos cadastrados no ERP a partir de uma determinada data e hora.
+    Variações de produtos devem vir em objeto ou vetor dentro de posições. Retorno deve ser
+    ordenado pela data e hora do cadastro do produto em ordem ascendente.
+    """
+    permission_classes = (permissions.IsAuthenticated, )
+    queryset = Produto.objects.all().order_by('dt_cadastro', 'hr_cadastro')
+    serializer_class = ProdutoSerializer
+    filter_fields = ('dt_cadastro', 'hr_cadastro')
