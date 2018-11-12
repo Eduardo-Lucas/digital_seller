@@ -21,7 +21,7 @@ from ecommerce import views
 
 router = routers.DefaultRouter()
 router.register('api/marcas/consultar', views.MarcaViewSet)
-router.register('api/produtos/consultar/fila/inseridos', views.ProdutoViewSet)
+router.register('api/produtos/consultar', views.ProdutoViewSet)
 
 
 urlpatterns = [

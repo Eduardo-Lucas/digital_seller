@@ -1,3 +1,4 @@
+from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework import viewsets
 from rest_framework import permissions
 
@@ -21,3 +22,5 @@ class ProdutoViewSet(viewsets.ReadOnlyModelViewSet):
     permission_classes = (permissions.IsAuthenticated, )
     queryset = Produto.objects.all().order_by('nm_produto')
     serializer_class = ProdutoSerializer
+    filter_backends = (DjangoFilterBackend,)
+    filter_fields = ('cd_produto',)
