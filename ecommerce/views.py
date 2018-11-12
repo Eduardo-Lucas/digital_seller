@@ -13,6 +13,7 @@ class MarcaViewSet(viewsets.ReadOnlyModelViewSet):
     permission_classes = (permissions.IsAuthenticated, )
     queryset = Marca.objects.all().order_by('nm_marca')
     serializer_class = MarcaSerializer
+    filter_fields = ('cd_marca',)
 
 
 class ProdutoViewSet(viewsets.ReadOnlyModelViewSet):
@@ -22,5 +23,4 @@ class ProdutoViewSet(viewsets.ReadOnlyModelViewSet):
     permission_classes = (permissions.IsAuthenticated, )
     queryset = Produto.objects.all().order_by('nm_produto')
     serializer_class = ProdutoSerializer
-    filter_backends = (DjangoFilterBackend,)
     filter_fields = ('cd_produto',)
