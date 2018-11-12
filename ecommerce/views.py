@@ -1,4 +1,3 @@
-from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework import viewsets
 from rest_framework import permissions
 
@@ -16,6 +15,7 @@ class MarcaViewSet(viewsets.ReadOnlyModelViewSet):
     filter_fields = ('cd_marca',)
 
 
+# Consultar produtos (/api/produtos/consultar)
 class ProdutoViewSet(viewsets.ReadOnlyModelViewSet):
     """
     Permitir consultar dados cadastrais de produtos. Variações de produtos devem ser retornadas em
@@ -25,17 +25,7 @@ class ProdutoViewSet(viewsets.ReadOnlyModelViewSet):
     permission_classes = (permissions.IsAuthenticated, )
     queryset = Produto.objects.all().order_by('cd_produto')
     serializer_class = ProdutoSerializer
-    filter_fields = ('cd_produto',)
+    filter_fields = ('cd_produto', 'dt_cadastro', 'hr_cadastro', 'dt_alteracao', 'hr_alteracao')
 
 
-# Consultar fila de produtos cadastrados (/api/produtos/consultar/fila/inseridos)
-class ProdutoInseridoViewSet(viewsets.ReadOnlyModelViewSet):
-    """
-    Permitir consultar produtos cadastrados no ERP a partir de uma determinada data e hora.
-    Variações de produtos devem vir em objeto ou vetor dentro de posições. Retorno deve ser
-    ordenado pela data e hora do cadastro do produto em ordem ascendente.
-    """
-    permission_classes = (permissions.IsAuthenticated, )
-    queryset = Produto.objects.all().order_by('dt_cadastro', 'hr_cadastro')
-    serializer_class = ProdutoSerializer
-    filter_fields = ('dt_cadastro', 'hr_cadastro')
+

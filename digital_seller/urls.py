@@ -15,14 +15,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from rest_framework import routers, request
+from rest_framework import routers
 
-from ecommerce import views
+from ecommerce.views import MarcaViewSet, ProdutoViewSet
 
 router = routers.DefaultRouter()
-router.register('api/marcas/consultar', views.MarcaViewSet)
-router.register('api/produtos/consultar', views.ProdutoViewSet)
-router.register('api/produtos/consultar/fila/inseridos', views.ProdutoInseridoViewSet)
+router.register('api/marcas/consultar', MarcaViewSet)
+router.register('api/produtos/consultar', ProdutoViewSet)
 
 
 urlpatterns = [

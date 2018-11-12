@@ -36,6 +36,8 @@ class Produto(models.Model):
     nr_peso = models.DecimalField(max_digits=15, decimal_places=8)
     dt_cadastro = models.DateField(auto_now_add=True, )
     hr_cadastro = models.TimeField(auto_now_add=True, )
+    dt_alteracao = models.DateField(auto_now=True, blank=True)
+    hr_alteracao = models.TimeField(auto_now=True, blank=True)
     fl_situacao = models.PositiveIntegerField(default=1)
     marca = models.ForeignKey(Marca, on_delete=models.CASCADE)
     
