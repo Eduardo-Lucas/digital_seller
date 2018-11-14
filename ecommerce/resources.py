@@ -1,6 +1,12 @@
 from import_export import resources
 
-from ecommerce.models import Marca, Produto
+from ecommerce.models import Marca, Produto, Filial
+
+
+class FilialResource(resources.ModelResource):
+    class Meta:
+        model = Filial
+        fields = ('id', 'nome', )
 
 
 class MarcaResource(resources.ModelResource):
@@ -13,4 +19,4 @@ class ProdutoResource(resources.ModelResource):
     class Meta:
         model = Produto
         fields = ('id', 'cd_produto', 'nm_produto', 'dc_modelo', 'cd_barras', 'cd_altura', 'nr_comprimento',
-                  'nr_largura', 'nr_peso', 'dt_cadastro', 'fl_situacao', 'nm_marca')
+                  'nr_largura', 'nr_peso', 'dt_cadastro', 'fl_situacao', 'nm_marca', 'qt_estoque', 'vl_preco')

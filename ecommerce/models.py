@@ -5,6 +5,18 @@ class Versao(models.Model):
     pass
 
 
+class Filial(models.Model):
+    nome = models.CharField(max_length=60,)
+    
+    class Meta:
+        ordering = ['nome']
+        verbose_name = "Filial"
+        verbose_name_plural = "Filiais"
+        
+    def __str__(self):
+        return self.nome
+
+
 class Marca(models.Model):
     cd_marca = models.PositiveIntegerField(default=1, unique=True)
     nm_marca = models.CharField(max_length=64, unique=True)
@@ -26,6 +38,7 @@ class Variacao(models.Model):
 
     
 class Produto(models.Model):
+    filial = models.ForeignKey(Filial, on_delete=models.CASCADE)
     cd_produto = models.PositiveIntegerField(default=1, unique=True)
     nm_produto = models.CharField(max_length=255, unique=True)
     dc_modelo = models.CharField(max_length=64)
@@ -38,8 +51,15 @@ class Produto(models.Model):
     hr_cadastro = models.TimeField(auto_now_add=True, )
     dt_alteracao = models.DateField(auto_now=True, blank=True)
     hr_alteracao = models.TimeField(auto_now=True, blank=True)
+    dt_preco = models.DateField(auto_now=True, blank=True)
+    hr_preco = models.TimeField(auto_now=True, blank=True)
     fl_situacao = models.PositiveIntegerField(default=1)
     marca = models.ForeignKey(Marca, on_delete=models.CASCADE)
+    qt_estoque = models.DecimalField(max_digits=15, decimal_places=4)
+    vl_preco = models.DecimalField(max_digits=15, decimal_places=4)
+
+    def __str__(self):
+        return self.nm_produto
     
 
 class VariacaoProduto(models.Model):

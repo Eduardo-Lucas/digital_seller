@@ -12,7 +12,7 @@ class MarcaViewSet(viewsets.ReadOnlyModelViewSet):
     permission_classes = (permissions.IsAuthenticated, )
     queryset = Marca.objects.all().order_by('nm_marca')
     serializer_class = MarcaSerializer
-    filter_fields = ('cd_marca',)
+    filter_fields = ('cd_marca', )
 
 
 # Consultar produtos (/api/produtos/consultar)
@@ -26,6 +26,5 @@ class ProdutoViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = Produto.objects.all().order_by('cd_produto')
     serializer_class = ProdutoSerializer
     filter_fields = ('cd_produto', 'dt_cadastro', 'hr_cadastro', 'dt_alteracao', 'hr_alteracao')
-
 
 

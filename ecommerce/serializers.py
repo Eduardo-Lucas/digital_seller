@@ -16,7 +16,4 @@ class ProdutoSerializer(serializers.HyperlinkedModelSerializer):
         model = Produto
         fields = ('url', 'cd_produto', 'nm_produto', 'dc_modelo', 'cd_barras', 'cd_altura', 'nr_comprimento',
                   'nr_largura', 'nr_peso', 'dt_cadastro', 'hr_cadastro', 'dt_alteracao', 'hr_alteracao',
-                  'fl_situacao', 'nm_marca')
-
-
-
+                  'fl_situacao', 'nm_marca', 'qt_estoque', 'vl_preco')

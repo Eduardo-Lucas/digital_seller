@@ -20,8 +20,8 @@ from rest_framework import routers
 from ecommerce.views import MarcaViewSet, ProdutoViewSet
 
 router = routers.DefaultRouter()
-router.register('api/marcas/consultar', MarcaViewSet)
-router.register('api/produtos/consultar', ProdutoViewSet)
+router.register('api/marcas/consultar', MarcaViewSet,)
+router.register('api/produtos/consultar', ProdutoViewSet,)
 
 
 urlpatterns = [
