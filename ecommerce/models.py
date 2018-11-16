@@ -95,4 +95,25 @@ class Cliente(models.Model):
                                        help_text='Razão social para pessoa jurídica')
     nr_inscricao_estadual = models.CharField(max_length=32,  null=True, blank=True,
                                              help_text='Inscrição estadual para pessoa jurídica')
+    
+    def __str__(self):
+        if self.tp_pessoa == 0:
+            return self.nm_cliente
+        else:
+            return self.nm_razao_social
+
+
+class Endereco(models.Model):
+    cliente = models.ForeignKey(Cliente, on_delete=models.CASCADE)
+    cd_endereco_erp = models.PositiveIntegerField(help_text='Código do endereço no ERP')
+    nr_cep = models.CharField(max_length=11, help_text='Número do CEP')
+    dc_endereco = models.CharField(max_length=128, help_text='Descrição do endereço')
+    dc_numero = models.CharField(max_length=9, help_text='Número do endereço')
+    dc_complemento = models.CharField(max_length=128, help_text='Complemento')
+    dc_bairro = models.CharField(max_length=128, help_text='Bairro')
+    nm_cidade = models.CharField(max_length=128, help_text='Cidade')
+    sg_uf = models.CharField(max_length=2, help_text='UF do estado')
+    
+    
+    
 

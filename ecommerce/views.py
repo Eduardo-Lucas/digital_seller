@@ -1,8 +1,8 @@
 from rest_framework import viewsets
 from rest_framework import permissions
 
-from ecommerce.models import Marca, Produto, Cliente
-from ecommerce.serializers import MarcaSerializer, ProdutoSerializer, ClienteSerializer
+from ecommerce.models import Marca, Produto, Cliente, Endereco
+from ecommerce.serializers import MarcaSerializer, ProdutoSerializer, ClienteSerializer, EnderecoSerializer
 
 
 class MarcaViewSet(viewsets.ReadOnlyModelViewSet):
@@ -37,3 +37,14 @@ class ClienteViewSet(viewsets.ModelViewSet):
     queryset = Cliente.objects.all().order_by('cd_cliente_erp')
     serializer_class = ClienteSerializer
     filter_fields = ('cd_cliente_eco', 'cd_cliente_erp', 'nr_cpf', 'nr_cnpj')
+
+
+# Consultar endereços (/api/endereços/consultar)
+class EnderecoViewSet(viewsets.ModelViewSet):
+    """
+    Permitir inserir, consultar e alterar dados cadastrais de Endereços de Cliente.
+    """
+    permission_classes = (permissions.IsAuthenticated, )
+    queryset = Endereco.objects.all().order_by('cd_endereco_erp')
+    serializer_class = EnderecoSerializer
+    filter_fields = ('cliente', 'cd_endereco_erp', )

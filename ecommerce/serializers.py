@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from ecommerce.models import Marca, Produto, Cliente
+from ecommerce.models import Marca, Produto, Cliente, Endereco
 
 
 class MarcaSerializer(serializers.HyperlinkedModelSerializer):
@@ -25,3 +25,10 @@ class ClienteSerializer(serializers.HyperlinkedModelSerializer):
         fields = ('url', 'cd_cliente_eco', 'cd_cliente_erp', 'nr_cpf', 'nr_cnpj', 'nm_cliente', 'dt_nascimento',
                   'tp_pessoa', 'fl_contribuinte_icms', 'nr_rg', 'dc_orgao', 'dt_cadastro', 'nr_fone_residencia',
                   'nr_fone_celular', 'nm_razao_social', 'nr_inscricao_estadual')
+
+
+class EnderecoSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = Endereco
+        fields = ('url', 'cliente', 'cd_endereco_erp', 'nr_cep', 'dc_endereco', 'dc_numero', 'dc_complemento',
+                  'dc_bairro', 'nm_cidade', 'sg_uf')

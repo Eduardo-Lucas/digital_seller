@@ -1,6 +1,6 @@
 from import_export import resources
 
-from ecommerce.models import Marca, Produto, Filial, Cliente
+from ecommerce.models import Marca, Produto, Filial, Cliente, Endereco
 
 
 class FilialResource(resources.ModelResource):
@@ -28,3 +28,10 @@ class ClienteResource(resources.ModelResource):
         fields = ('id', 'cd_cliente_eco', 'cd_cliente_erp', 'nr_cpf', 'nr_cnpj', 'nm_cliente', 'dt_nascimento',
                   'tp_pessoa', 'fl_contribuinte_icms', 'nr_rg', 'dc_orgao', 'dt_cadastro', 'nr_fone_residencia',
                   'nr_fone_celular', 'nm_razao_social', 'nr_inscricao_estadual')
+
+
+class EnderecoResource(resources.ModelResource):
+    class Meta:
+        model = Endereco
+        fields = ('id', 'cliente', 'cd_endereco_erp', 'nr_cep', 'dc_endereco', 'dc_numero', 'dc_complemento',
+                  'dc_bairro', 'nm_cidade', 'sg_uf')
