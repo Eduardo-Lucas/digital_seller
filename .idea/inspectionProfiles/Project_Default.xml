@@ -4,7 +4,7 @@
     <inspection_tool class="PyPackageRequirementsInspection" enabled="true" level="WARNING" enabled_by_default="true">
       <option name="ignoredPackages">
         <value>
-          <list size="175">
+          <list size="176">
             <item index="0" class="java.lang.String" itemvalue="django-decouple" />
             <item index="1" class="java.lang.String" itemvalue="Django" />
             <item index="2" class="java.lang.String" itemvalue="pytz" />
@@ -180,6 +180,7 @@
             <item index="172" class="java.lang.String" itemvalue="win-inet-pton" />
             <item index="173" class="java.lang.String" itemvalue="jupyterlab-launcher" />
             <item index="174" class="java.lang.String" itemvalue="ply" />
+            <item index="175" class="java.lang.String" itemvalue="Markdown" />
           </list>
         </value>
       </option>

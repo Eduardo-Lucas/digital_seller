@@ -1,7 +1,7 @@
 from django.contrib import admin
 from import_export.admin import ImportExportModelAdmin
 
-from ecommerce.models import Marca, Produto, Filial
+from ecommerce.models import Marca, Produto, Filial, Cliente
 
 
 @admin.register(Filial)
@@ -16,4 +16,9 @@ class MarcaResource(ImportExportModelAdmin):
 
 @admin.register(Produto)
 class ProdutoResource(ImportExportModelAdmin):
+    pass
+
+
+@admin.register(Cliente)
+class ClienteResource(ImportExportModelAdmin):
     pass

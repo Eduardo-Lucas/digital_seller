@@ -3,23 +3,16 @@
   <component name="ChangeListManager">
     <list default="true" id="03e5e95e-4d89-4609-bb36-0e545592be62" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/dictionaries/HP.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/HP.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/digital_seller/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/digital_seller/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/digital_seller/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/digital_seller/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ecommerce/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ecommerce/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ecommerce/migrations/0002_auto_20181109_1139.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ecommerce/migrations/0003_produto_variacao_variacaoproduto.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ecommerce/migrations/0004_auto_20181109_1818.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ecommerce/migrations/0005_produto_hr_cadastro.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ecommerce/migrations/0006_auto_20181110_1249.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ecommerce/migrations/0007_auto_20181112_1111.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ecommerce/migrations/0008_auto_20181112_1429.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ecommerce/migrations/0009_auto_20181112_1438.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/ecommerce/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ecommerce/resources.py" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/resources.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ecommerce/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/serializers.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ecommerce/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -33,7 +26,7 @@
       <file leaf-file-name="settings.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/digital_seller/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
+            <state relative-caret-position="286">
               <caret line="109" column="3" lean-forward="true" selection-start-line="109" selection-start-column="3" selection-end-line="109" selection-end-column="3" />
               <folding>
                 <element signature="e#315#324#0" expanded="true" />
@@ -42,13 +35,46 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="settings.ini" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/digital_seller/settings.ini">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="1" column="61" selection-start-line="1" selection-start-column="11" selection-end-line="1" selection-end-column="61" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/digital_seller/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+            <state relative-caret-position="340">
+              <caret line="24" column="58" selection-start-line="24" selection-start-column="58" selection-end-line="24" selection-end-column="58" />
               <folding>
                 <element signature="e#638#670#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="resources.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ecommerce/resources.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="357">
+              <caret line="23" selection-start-line="23" selection-end-line="23" />
+              <folding>
+                <element signature="e#0#35#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="admin.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ecommerce/admin.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="357">
+              <caret line="24" selection-start-line="24" selection-end-line="24" />
+              <folding>
+                <element signature="e#0#32#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -57,8 +83,11 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ecommerce/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="35" selection-start-column="35" selection-end-column="35" />
+            <state relative-caret-position="595">
+              <caret line="39" selection-start-line="39" selection-end-line="39" />
+              <folding>
+                <element signature="e#0#35#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -66,8 +95,8 @@
       <file leaf-file-name="serializers.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ecommerce/serializers.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+            <state relative-caret-position="408">
+              <caret line="26" column="80" selection-start-line="24" selection-start-column="17" selection-end-line="26" selection-end-column="80" />
               <folding>
                 <element signature="e#0#38#0" expanded="true" />
               </folding>
@@ -78,8 +107,8 @@
       <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ecommerce/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="184">
-              <caret line="33" column="56" lean-forward="true" selection-start-line="33" selection-start-column="56" selection-end-line="33" selection-end-column="56" />
+            <state relative-caret-position="422">
+              <caret line="96" column="54" selection-start-line="96" selection-start-column="45" selection-end-line="96" selection-end-column="54" />
             </state>
           </provider>
         </entry>
@@ -111,21 +140,21 @@
         <option value="$PROJECT_DIR$/requirements.txt" />
         <option value="$PROJECT_DIR$/ecommerce/templates/ecommerce/data_hora_list.html" />
         <option value="$PROJECT_DIR$/ecommerce/migrations/0010_auto_20181113_1500.py" />
-        <option value="$PROJECT_DIR$/ecommerce/models.py" />
-        <option value="$PROJECT_DIR$/ecommerce/admin.py" />
         <option value="$PROJECT_DIR$/ecommerce/migrations/0001_initial.py" />
-        <option value="$PROJECT_DIR$/ecommerce/resources.py" />
-        <option value="$PROJECT_DIR$/digital_seller/urls.py" />
         <option value="$PROJECT_DIR$/ecommerce/serializers.py" />
         <option value="$PROJECT_DIR$/ecommerce/views.py" />
+        <option value="$PROJECT_DIR$/digital_seller/urls.py" />
+        <option value="$PROJECT_DIR$/ecommerce/resources.py" />
+        <option value="$PROJECT_DIR$/ecommerce/admin.py" />
+        <option value="$PROJECT_DIR$/ecommerce/models.py" />
         <option value="$PROJECT_DIR$/digital_seller/settings.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="632" />
+    <option name="x" value="659" />
+    <option name="y" value="24" />
+    <option name="width" value="607" />
     <option name="height" value="735" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
@@ -152,6 +181,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -179,7 +209,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -222,7 +251,7 @@
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2001488" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="7" />
@@ -250,6 +279,13 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/digital_seller/settings.ini">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="61" selection-start-line="1" selection-start-column="11" selection-end-line="1" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/ecommerce/admin.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
@@ -544,13 +580,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/digital_seller/settings.ini">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="61" selection-start-line="1" selection-start-column="11" selection-end-line="1" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/site-packages/rest_framework/viewsets.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="127">
@@ -581,13 +610,47 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ecommerce/templates/ecommerce/data_hora_list.html" />
     <entry file="file://$PROJECT_DIR$/ecommerce/migrations/0010_auto_20181113_1500.py" />
-    <entry file="file://$PROJECT_DIR$/ecommerce/migrations/0001_initial.py">
-      <provider selected="true" editor-type-id="text-editor" />
+    <entry file="file://$PROJECT_DIR$/digital_seller/settings.ini">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="61" selection-start-line="1" selection-start-column="11" selection-end-line="1" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ecommerce/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="595">
+          <caret line="39" selection-start-line="39" selection-end-line="39" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/digital_seller/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="24" column="58" selection-start-line="24" selection-start-column="58" selection-end-line="24" selection-end-column="58" />
+          <folding>
+            <element signature="e#638#670#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ecommerce/serializers.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="26" column="80" selection-start-line="24" selection-start-column="17" selection-end-line="26" selection-end-column="80" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ecommerce/resources.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="47" lean-forward="true" selection-start-line="17" selection-start-column="47" selection-end-line="17" selection-end-column="47" />
+        <state relative-caret-position="357">
+          <caret line="23" selection-start-line="23" selection-end-line="23" />
           <folding>
             <element signature="e#0#35#0" expanded="true" />
           </folding>
@@ -596,8 +659,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ecommerce/admin.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="8" lean-forward="true" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="8" />
+        <state relative-caret-position="357">
+          <caret line="24" selection-start-line="24" selection-end-line="24" />
           <folding>
             <element signature="e#0#32#0" expanded="true" />
           </folding>
@@ -606,41 +669,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ecommerce/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="33" column="56" lean-forward="true" selection-start-line="33" selection-start-column="56" selection-end-line="33" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ecommerce/serializers.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
-          <folding>
-            <element signature="e#0#38#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/digital_seller/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
-          <folding>
-            <element signature="e#638#670#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ecommerce/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="35" selection-start-column="35" selection-end-column="35" />
+        <state relative-caret-position="422">
+          <caret line="96" column="54" selection-start-line="96" selection-start-column="45" selection-end-line="96" selection-end-column="54" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/digital_seller/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
+        <state relative-caret-position="286">
           <caret line="109" column="3" lean-forward="true" selection-start-line="109" selection-start-column="3" selection-end-line="109" selection-end-column="3" />
           <folding>
             <element signature="e#315#324#0" expanded="true" />

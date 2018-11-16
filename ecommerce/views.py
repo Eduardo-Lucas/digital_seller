@@ -1,8 +1,8 @@
 from rest_framework import viewsets
 from rest_framework import permissions
 
-from ecommerce.models import Marca, Produto
-from ecommerce.serializers import MarcaSerializer, ProdutoSerializer
+from ecommerce.models import Marca, Produto, Cliente
+from ecommerce.serializers import MarcaSerializer, ProdutoSerializer, ClienteSerializer
 
 
 class MarcaViewSet(viewsets.ReadOnlyModelViewSet):
@@ -28,3 +28,12 @@ class ProdutoViewSet(viewsets.ReadOnlyModelViewSet):
     filter_fields = ('cd_produto', 'dt_cadastro', 'hr_cadastro', 'dt_alteracao', 'hr_alteracao')
 
 
+# Consultar clientes (/api/clientes/consultar)
+class ClienteViewSet(viewsets.ModelViewSet):
+    """
+    Permitir inserir, consultar e alterar dados cadastrais de Cliente.
+    """
+    permission_classes = (permissions.IsAuthenticated, )
+    queryset = Cliente.objects.all().order_by('cd_cliente_erp')
+    serializer_class = ClienteSerializer
+    filter_fields = ('cd_cliente_eco', 'cd_cliente_erp', 'nr_cpf', 'nr_cnpj')
