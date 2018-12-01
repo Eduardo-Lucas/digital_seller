@@ -4,7 +4,7 @@
     <inspection_tool class="PyPackageRequirementsInspection" enabled="true" level="WARNING" enabled_by_default="true">
       <option name="ignoredPackages">
         <value>
-          <list size="176">
+          <list size="185">
             <item index="0" class="java.lang.String" itemvalue="django-decouple" />
             <item index="1" class="java.lang.String" itemvalue="Django" />
             <item index="2" class="java.lang.String" itemvalue="pytz" />
@@ -181,6 +181,15 @@
             <item index="173" class="java.lang.String" itemvalue="jupyterlab-launcher" />
             <item index="174" class="java.lang.String" itemvalue="ply" />
             <item index="175" class="java.lang.String" itemvalue="Markdown" />
+            <item index="176" class="java.lang.String" itemvalue="colorama" />
+            <item index="177" class="java.lang.String" itemvalue="certifi" />
+            <item index="178" class="java.lang.String" itemvalue="MarkupSafe" />
+            <item index="179" class="java.lang.String" itemvalue="requests" />
+            <item index="180" class="java.lang.String" itemvalue="urllib3" />
+            <item index="181" class="java.lang.String" itemvalue="idna" />
+            <item index="182" class="java.lang.String" itemvalue="django-rest-swagger" />
+            <item index="183" class="java.lang.String" itemvalue="openapi-codec" />
+            <item index="184" class="java.lang.String" itemvalue="simplejson" />
           </list>
         </value>
       </option>

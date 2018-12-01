@@ -114,6 +114,69 @@ class Endereco(models.Model):
     nm_cidade = models.CharField(max_length=128, help_text='Cidade')
     sg_uf = models.CharField(max_length=2, help_text='UF do estado')
     
+
+class Pedido(models.Model):
+    TP_ENTREGA = (
+        (0, 'Retira'),
+        (1, 'Entrega')
+    )
+    filial = models.ForeignKey(Filial, on_delete=models.CASCADE, help_text='Código da filial do pedido')
+    cliente = models.ForeignKey(Cliente, on_delete=models.CASCADE, help_text='Código do cliente no ERP')
+    nr_pedido_eco = models.PositiveIntegerField(help_text='Número do pedido no e-commerce')
+    nr_pedido_erp = models.PositiveIntegerField(help_text='Número do pedido no ERP')
+    dt_pedido = models.DateField(auto_now_add=True, help_text='Data do pedido')
+    hr_pedido = models.TimeField(auto_now_add=True, help_text='Hora do pedido')
+    cd_vendedor = models.PositiveIntegerField(help_text='Código do vendedor no ERP')
+    dc_observacao = models.TextField(max_length=230, help_text='Observação do cliente no pedido')
+    tp_entrega = models.PositiveIntegerField(choices=TP_ENTREGA, default=1, help_text='Retira (0), Entrega (1)')
+    vl_entrega = models.DecimalField(max_digits=15, decimal_places=4, help_text='Valor da entrega')
     
+    class Meta:
+        ordering = ['-dt_pedido', 'nr_pedido_eco', 'nr_pedido_erp']
+        verbose_name = "Pedido"
+        verbose_name_plural = "Pedidos"
+        
+    def __str__(self):
+        return str(self.filial) + ' ' + str(self.nr_pedido_eco) + ' ' + str(self.nr_pedido_eco) + \
+               ' ' + str(self.dt_pedido)
     
 
+class PedidoItem (models.Model):
+    pedido = models.ForeignKey(Pedido, related_name='items', on_delete=models.CASCADE)
+    produto = models.ForeignKey(Produto, on_delete=models.CASCADE)
+    qt_comprada = models.DecimalField(max_digits=15, decimal_places=4, default=1,
+                                      help_text='Quantidade comprada (Produto)')
+    vl_venda = models.DecimalField(max_digits=15, decimal_places=4, help_text='Valor de venda (Produto)')
+    
+    def __str__(self):
+        return str(self.produto) + ' ' + str(self.qt_comprada) + ' ' + str(self.vl_venda)
+
+
+class Parcela(models.Model):
+    TP_PAGAMENTO = (
+        (0, 'Cartão'),
+        (1, 'Boleto'),
+        (2, 'Outros (Parcela)')
+    )
+    pedido = models.ForeignKey(Pedido, related_name='parcelas', on_delete=models.CASCADE)
+    tp_pagamento = models.PositiveIntegerField(choices=TP_PAGAMENTO, default=2, help_text='Cartão (0), Boleto (1), '
+                                                                                          'Outros (2) (Parcela)')
+    vl_transacao = models.DecimalField(max_digits=15, decimal_places=4, help_text='Valor total das parcelas (Parcela)')
+    vl_parcela = models.DecimalField(max_digits=15, decimal_places=4, help_text='Valor da parcela (Parcela)')
+    qt_parcelas = models.PositiveIntegerField(help_text='Quantidade de parcelas (Parcela)')
+    cd_nsu = models.CharField(max_length=16, null=True, blank=True, help_text='NSU quando usado cartão (Parcela)')
+    dt_transacao = models.DateField(auto_now_add=True)
+    cd_autorizacao = models.CharField(max_length=16, null=True, blank=True, help_text='Código da autorização quando '
+                                                                                      'usado cartão (Parcela)')
+    nm_bandeira = models.CharField(max_length=16, null=True, blank=True, help_text='Nome da bandeira quando '
+                                                                                   'usado cartão (Parcela)')
+    nm_adquirente = models.CharField(max_length=16, null=True, blank=True, help_text='Nome da adquirente quando usado '
+                                                                                     'cartão (Parcela)')
+    nr_pedido_gateway = models.CharField(max_length=64, null=True, blank=True, help_text='Número do pedido no gateway '
+                                                                                         'de pagamento (Parcela)')
+    
+    def __str__(self):
+        return str(self.tp_pagamento) + ' ' + str(self.id) + ' ' + str(self.vl_transacao) + ' ' + \
+               str(self.vl_parcela) + ' ' + str(self.qt_parcelas) + ' ' + str(self.cd_nsu) + ' ' + \
+               str(self.dt_transacao) + ' ' + self.cd_autorizacao + ' ' + self.nm_bandeira + ' ' + \
+               self.nm_adquirente + ' ' + self.nr_pedido_gateway

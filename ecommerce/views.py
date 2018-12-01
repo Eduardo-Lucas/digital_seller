@@ -1,8 +1,24 @@
 from rest_framework import viewsets
 from rest_framework import permissions
+from rest_framework.views import APIView
 
-from ecommerce.models import Marca, Produto, Cliente, Endereco
-from ecommerce.serializers import MarcaSerializer, ProdutoSerializer, ClienteSerializer, EnderecoSerializer
+from ecommerce.models import Marca, Produto, Cliente, Endereco, Pedido, Filial, PedidoItem
+from ecommerce.serializers import MarcaSerializer, ProdutoSerializer, ClienteSerializer, EnderecoSerializer, \
+    PedidoSerializer, FilialSerializer, VersionSerializer, PedidoItemSerializer
+
+
+class VersionViewSet(APIView):
+    serializer_class = VersionSerializer
+    
+
+class FilialViewSet(viewsets.ReadOnlyModelViewSet):
+    """
+    Permitir consultar dados cadastrais de marcas.
+    """
+    permission_classes = (permissions.IsAuthenticated, )
+    queryset = Filial.objects.all().order_by('nome')
+    serializer_class = FilialSerializer
+    filter_fields = ('nome', )
 
 
 class MarcaViewSet(viewsets.ReadOnlyModelViewSet):
@@ -18,8 +34,10 @@ class MarcaViewSet(viewsets.ReadOnlyModelViewSet):
 # Consultar produtos (/api/produtos/consultar)
 class ProdutoViewSet(viewsets.ReadOnlyModelViewSet):
     """
-    Permitir consultar dados cadastrais de produtos. Variações de produtos devem ser retornadas em
-    objeto ou vetor dentro de posições. Retorno deve ser ordenado pelo código do produto em ordem
+    Permitir consultar dados cadastrais de produtos.
+    Variações de produtos devem ser retornadas em
+    objeto ou vetor dentro de posições.
+    Retorno deve ser ordenado pelo código do produto em ordem
     ascendente.
     """
     permission_classes = (permissions.IsAuthenticated, )
@@ -48,3 +66,25 @@ class EnderecoViewSet(viewsets.ModelViewSet):
     queryset = Endereco.objects.all().order_by('cd_endereco_erp')
     serializer_class = EnderecoSerializer
     filter_fields = ('cliente', 'cd_endereco_erp', )
+
+
+# Consultar endereços (/api/pedidos/consultar)
+class PedidoViewSet(viewsets.ModelViewSet):
+    """
+    Permitir inserir, consultar e alterar dados cadastrais de Endereços de Cliente.
+    """
+    permission_classes = (permissions.IsAuthenticated, )
+    queryset = Pedido.objects.all().order_by('-dt_pedido', '-hr_pedido')
+    serializer_class = PedidoSerializer
+    filter_fields = ('nr_pedido_eco', 'nr_pedido_erp', )
+
+
+# Consultar endereços (/api/pedidos/consultar)
+class PedidoItemViewSet(viewsets.ModelViewSet):
+    """
+    Permitir inserir, consultar e alterar dados cadastrais de Endereços de Cliente.
+    """
+    permission_classes = (permissions.IsAuthenticated, )
+    queryset = PedidoItem.objects.all().order_by('produto')
+    serializer_class = PedidoItemSerializer
+    filter_fields = ('produto', 'vl_venda')
