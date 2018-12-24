@@ -4,7 +4,7 @@
     <inspection_tool class="PyPackageRequirementsInspection" enabled="true" level="WARNING" enabled_by_default="true">
       <option name="ignoredPackages">
         <value>
-          <list size="185">
+          <list size="186">
             <item index="0" class="java.lang.String" itemvalue="django-decouple" />
             <item index="1" class="java.lang.String" itemvalue="Django" />
             <item index="2" class="java.lang.String" itemvalue="pytz" />
@@ -190,6 +190,7 @@
             <item index="182" class="java.lang.String" itemvalue="django-rest-swagger" />
             <item index="183" class="java.lang.String" itemvalue="openapi-codec" />
             <item index="184" class="java.lang.String" itemvalue="simplejson" />
+            <item index="185" class="java.lang.String" itemvalue="drfdocs" />
           </list>
         </value>
       </option>
